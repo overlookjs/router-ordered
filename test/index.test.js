@@ -9,7 +9,7 @@
 const {Route} = require('@overlook/core'),
 	each = require('jest-each').default,
 	routerOrdered = require('../index'),
-	{identifier} = routerOrdered;
+	{IDENTIFIER} = routerOrdered;
 
 // Init
 require('./support');
@@ -41,17 +41,17 @@ describe('Extension', () => { // eslint-disable-line jest/lowercase-name
 		});
 
 		it('has identifier symbol', () => {
-			expect(RouteOrdered[identifier]).toBeTrue();
+			expect(RouteOrdered[IDENTIFIER]).toBeTrue();
 		});
 
 		it('class instance has identifier symbol', () => {
 			const route = new RouteOrdered();
-			expect(route[identifier]).toBeTrue();
+			expect(route[IDENTIFIER]).toBeTrue();
 		});
 	});
 
 	describe('exports symbols', () => {
-		each([['identifier'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']]).it(
+		each([['IDENTIFIER'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']]).it(
 			'%s',
 			(key) => {
 				expect(typeof routerOrdered[key]).toBe('symbol');
