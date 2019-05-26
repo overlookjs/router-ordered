@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+Breaking changes:
+
+* Route extension identifier located at `.IDENTIFIER`
+
 ## 0.1.1
 
 Bug fixes:
