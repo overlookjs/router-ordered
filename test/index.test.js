@@ -6,15 +6,56 @@
 'use strict';
 
 // Modules
-const routerOrdered = require('../index');
+const {Route} = require('@overlook/core'),
+	each = require('jest-each').default,
+	routerOrdered = require('../index'),
+	{identifier} = routerOrdered;
 
 // Init
 require('./support');
 
 // Tests
 
-describe('tests', () => {
-	it.skip('all', () => { // eslint-disable-line jest/no-disabled-tests
-		expect(routerOrdered).not.toBeUndefined();
+describe('Extension', () => { // eslint-disable-line jest/lowercase-name
+	it('is a function', () => {
+		expect(routerOrdered).toBeFunction();
+	});
+
+	it('returns a subclass of input', () => {
+		const RouteOrdered = routerOrdered(Route);
+		expect(RouteOrdered).toBeFunction();
+		expect(Object.getPrototypeOf(RouteOrdered)).toBe(Route);
+		expect(Object.getPrototypeOf(RouteOrdered.prototype)).toBe(Route.prototype);
+	});
+
+	describe('when passed to `Route.extend()`', () => {
+		let RouteOrdered;
+		beforeEach(() => {
+			RouteOrdered = Route.extend(routerOrdered);
+		});
+
+		it('returns subclass of Route', () => {
+			expect(RouteOrdered).toBeFunction();
+			expect(Object.getPrototypeOf(RouteOrdered)).toBe(Route);
+			expect(Object.getPrototypeOf(RouteOrdered.prototype)).toBe(Route.prototype);
+		});
+
+		it('has identifier symbol', () => {
+			expect(RouteOrdered[identifier]).toBeTrue();
+		});
+
+		it('class instance has identifier symbol', () => {
+			const route = new RouteOrdered();
+			expect(route[identifier]).toBeTrue();
+		});
+	});
+
+	describe('exports symbols', () => {
+		each([['identifier'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']]).it(
+			'%s',
+			(key) => {
+				expect(typeof routerOrdered[key]).toBe('symbol');
+			}
+		);
 	});
 });
