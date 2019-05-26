@@ -30,6 +30,14 @@ beforeEach(() => {
 });
 
 describe('Ordering', () => { // eslint-disable-line jest/lowercase-name
+	it('`.init()` does nothing if is root route', () => {
+		app = new Overlook();
+		parent = new RouteOrdered();
+		app.attachRouter(parent);
+		app.init();
+		expect(app.router).toBe(parent);
+	});
+
 	describe('`.init()` orders children according to `[IS_BEFORE]()`', () => {
 		describe('with 2 routes', () => {
 			it('in order attached by default', () => {
