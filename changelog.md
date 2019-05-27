@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2
+
+Dev:
+
+* Update `@overlook/core` dev dependency
+
 ## 0.2.1
 
 Docs:
