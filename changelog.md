@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+
+Docs:
+
+* Readme update
+
 ## 0.2.0
 
 Breaking changes:
