@@ -1,6 +1,6 @@
 {
   "name": "@overlook/router-ordered",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Overlook framework ordered router",
   "main": "index.js",
   "author": {

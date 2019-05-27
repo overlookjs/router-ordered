@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3
+
+Docs:
+
+* Fix missing changelog entry
+
 ## 0.2.2
 
 Dev:
