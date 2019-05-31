@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+Breaking changes:
+
+* Create errors with `.debugError`
+
 ## 0.2.3
 
 Docs:
