@@ -195,7 +195,7 @@ describe('Ordering', () => { // eslint-disable-line jest/lowercase-name
 
 			expect(() => {
 				app.init();
-			}).toThrowWithMessage(Error, 'Route ordering conflict (in router path /?)');
+			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /?)');
 		});
 
 		it('circular conflict', () => {
@@ -211,7 +211,7 @@ describe('Ordering', () => { // eslint-disable-line jest/lowercase-name
 
 			expect(() => {
 				app.init();
-			}).toThrowWithMessage(Error, 'Route ordering conflict (in router path /?)');
+			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /?)');
 		});
 	});
 });
