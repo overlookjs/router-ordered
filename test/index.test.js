@@ -7,7 +7,6 @@
 
 // Modules
 const {Route} = require('@overlook/core'),
-	each = require('jest-each').default,
 	routerOrdered = require('../index'),
 	{IDENTIFIER} = routerOrdered;
 
@@ -51,7 +50,7 @@ describe('Extension', () => { // eslint-disable-line jest/lowercase-name
 	});
 
 	describe('exports symbols', () => {
-		each([['IDENTIFIER'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']]).it(
+		it.each([['IDENTIFIER'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']])(
 			'%s',
 			(key) => {
 				expect(typeof routerOrdered[key]).toBe('symbol');
