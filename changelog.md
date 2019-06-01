@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.1
+
+Bug fixes:
+
+* Update debug instrumentation for latest `@overlook/core`
+* Do not define sibling sets in `.initProps`
+
+Tests:
+
+* Remove `jest-each` dependency [refactor]
+
+Docs:
+
+* Document all functionality
+
 ## 0.3.0
 
 Breaking changes:
