@@ -11,9 +11,6 @@ const Overlook = require('@overlook/core'),
 	pluginOrdered = require('../index'),
 	{IS_BEFORE} = pluginOrdered;
 
-// Init
-require('./support');
-
 // Tests
 
 const RouteOrdered = Route.extend(pluginOrdered);

@@ -10,9 +10,6 @@ const {Route} = require('@overlook/core'),
 	pluginOrdered = require('../index'),
 	{IDENTIFIER} = pluginOrdered;
 
-// Init
-require('./support');
-
 // Tests
 
 describe('Extension', () => { // eslint-disable-line jest/lowercase-name
