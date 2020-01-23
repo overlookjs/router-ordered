@@ -1,5 +1,5 @@
 /* --------------------
- * @overlook/router-ordered module
+ * @overlook/plugin-ordered module
  * Tests
  * ------------------*/
 
@@ -7,8 +7,8 @@
 
 // Modules
 const {Route} = require('@overlook/core'),
-	routerOrdered = require('../index'),
-	{IDENTIFIER} = routerOrdered;
+	pluginOrdered = require('../index'),
+	{IDENTIFIER} = pluginOrdered;
 
 // Init
 require('./support');
@@ -17,11 +17,11 @@ require('./support');
 
 describe('Extension', () => { // eslint-disable-line jest/lowercase-name
 	it('is a function', () => {
-		expect(routerOrdered).toBeFunction();
+		expect(pluginOrdered).toBeFunction();
 	});
 
 	it('returns a subclass of input', () => {
-		const RouteOrdered = routerOrdered(Route);
+		const RouteOrdered = pluginOrdered(Route);
 		expect(RouteOrdered).toBeFunction();
 		expect(Object.getPrototypeOf(RouteOrdered)).toBe(Route);
 		expect(Object.getPrototypeOf(RouteOrdered.prototype)).toBe(Route.prototype);
@@ -30,7 +30,7 @@ describe('Extension', () => { // eslint-disable-line jest/lowercase-name
 	describe('when passed to `Route.extend()`', () => {
 		let RouteOrdered;
 		beforeEach(() => {
-			RouteOrdered = Route.extend(routerOrdered);
+			RouteOrdered = Route.extend(pluginOrdered);
 		});
 
 		it('returns subclass of Route', () => {
@@ -53,7 +53,7 @@ describe('Extension', () => { // eslint-disable-line jest/lowercase-name
 		it.each([['IDENTIFIER'], ['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']])(
 			'%s',
 			(key) => {
-				expect(typeof routerOrdered[key]).toBe('symbol');
+				expect(typeof pluginOrdered[key]).toBe('symbol');
 			}
 		);
 	});

@@ -1,17 +1,17 @@
 {
-  "name": "@overlook/router-ordered",
+  "name": "@overlook/plugin-ordered",
   "version": "0.3.1",
-  "description": "Overlook framework ordered router",
+  "description": "Overlook framework ordered plugin",
   "main": "index.js",
   "author": {
     "name": "Overlook Motel"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/overlookjs/router-ordered.git"
+    "url": "https://github.com/overlookjs/plugin-ordered.git"
   },
   "bugs": {
-    "url": "https://github.com/overlookjs/router-ordered/issues"
+    "url": "https://github.com/overlookjs/plugin-ordered/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -30,7 +30,7 @@
   },
   "keywords": [
     "overlook",
-    "overlook-router",
+    "overlook-plugin",
     "ordered"
   ],
   "scripts": {

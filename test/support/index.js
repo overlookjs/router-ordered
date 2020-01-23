@@ -1,5 +1,5 @@
 /* --------------------
- * @overlook/router-ordered
+ * @overlook/plugin-ordered
  * Tests set-up
  * ------------------*/
 

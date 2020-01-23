@@ -1,17 +1,17 @@
-[![NPM version](https://img.shields.io/npm/v/@overlook/router-ordered.svg)](https://www.npmjs.com/package/@overlook/router-ordered)
-[![Build Status](https://img.shields.io/travis/overlookjs/router-ordered/master.svg)](http://travis-ci.org/overlookjs/router-ordered)
-[![Dependency Status](https://img.shields.io/david/overlookjs/router-ordered.svg)](https://david-dm.org/overlookjs/router-ordered)
-[![Dev dependency Status](https://img.shields.io/david/dev/overlookjs/router-ordered.svg)](https://david-dm.org/overlookjs/router-ordered)
-[![Greenkeeper badge](https://badges.greenkeeper.io/overlookjs/router-ordered.svg)](https://greenkeeper.io/)
-[![Coverage Status](https://img.shields.io/coveralls/overlookjs/router-ordered/master.svg)](https://coveralls.io/r/overlookjs/router-ordered)
+[![NPM version](https://img.shields.io/npm/v/@overlook/plugin-ordered.svg)](https://www.npmjs.com/package/@overlook/plugin-ordered)
+[![Build Status](https://img.shields.io/travis/overlookjs/plugin-ordered/master.svg)](http://travis-ci.org/overlookjs/plugin-ordered)
+[![Dependency Status](https://img.shields.io/david/overlookjs/plugin-ordered.svg)](https://david-dm.org/overlookjs/plugin-ordered)
+[![Dev dependency Status](https://img.shields.io/david/dev/overlookjs/plugin-ordered.svg)](https://david-dm.org/overlookjs/plugin-ordered)
+[![Greenkeeper badge](https://badges.greenkeeper.io/overlookjs/plugin-ordered.svg)](https://greenkeeper.io/)
+[![Coverage Status](https://img.shields.io/coveralls/overlookjs/plugin-ordered/master.svg)](https://coveralls.io/r/overlookjs/plugin-ordered)
 
-# Overlook framework ordered router
+# Overlook framework ordered plugin
 
 Part of the [Overlook framework](https://overlookjs.github.io/).
 
 ## Abstract
 
-Route class extension for routes which need to be in a certain order relative to their siblings in their mutual parent's array of children.
+Plugin for routes which need to be in a certain order relative to their siblings in their mutual parent's array of children.
 
 e.g. For path-matching routes, `/photos/new` needs to be before `/photos/:id` so it gets a chance to be matched first.
 
@@ -19,7 +19,7 @@ e.g. For path-matching routes, `/photos/new` needs to be before `/photos/:id` so
 
 ### Where to use it
 
-This extension should be on the routes which need to be ordered, not the parent containing them. i.e. on `/photos/new` and `/photos/:id`, not `/photos`.
+This plugin should be on the routes which need to be ordered, not the parent containing them. i.e. on `/photos/new` and `/photos/:id`, not `/photos`.
 
 ### Defining order
 
@@ -33,15 +33,15 @@ It can do this by extending the `[IS_BEFORE]()` method.
 * `false` if needs to be after that sibling
 * `null` if no preference
 
-The default `[IS_BEFORE]()` method provided by the extension returns `null` (i.e. no preference).
+The default `[IS_BEFORE]()` method provided by the plugin returns `null` (i.e. no preference).
 
 ```js
 const Route = require('@overlook/route');
-const orderedExtension = require('@overlook/router-ordered');
-const {IS_BEFORE} = orderedExtension;
-const RouteOrdered = Route.extend( orderedExtension );
+const orderedPlugin = require('@overlook/plugin-ordered');
+const {IS_BEFORE} = orderedPlugin;
+const OrderedRoute = Route.extend( orderedPlugin );
 
-class MyOrderedRoute extends RouteOrdered {
+class MyOrderedRoute extends OrderedRoute {
   [IS_BEFORE](sibling) {
     // If super method returns a result, use it
     const before = super[IS_BEFORE](sibling);
@@ -66,7 +66,7 @@ In these cases an error will be thrown.
 
 ### Extending
 
-The extension also exposes an `[ORDER]()` method.
+The plugin also exposes an `[ORDER]()` method.
 
 If you want to take some action before/after ordering, extend this method.
 
@@ -78,11 +78,11 @@ Use `npm test` to run the tests. Use `npm run cover` to check coverage.
 
 ## Changelog
 
-See [changelog.md](https://github.com/overlookjs/router-ordered/blob/master/changelog.md)
+See [changelog.md](https://github.com/overlookjs/plugin-ordered/blob/master/changelog.md)
 
 ## Issues
 
-If you discover a bug, please raise an issue on Github. https://github.com/overlookjs/router-ordered/issues
+If you discover a bug, please raise an issue on Github. https://github.com/overlookjs/plugin-ordered/issues
 
 ## Contribution
 

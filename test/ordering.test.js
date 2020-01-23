@@ -1,5 +1,5 @@
 /* --------------------
- * @overlook/router-ordered module
+ * @overlook/plugin-ordered module
  * Tests
  * ------------------*/
 
@@ -8,15 +8,15 @@
 // Modules
 const Overlook = require('@overlook/core'),
 	{Route} = Overlook,
-	routerOrdered = require('../index'),
-	{IS_BEFORE} = routerOrdered;
+	pluginOrdered = require('../index'),
+	{IS_BEFORE} = pluginOrdered;
 
 // Init
 require('./support');
 
 // Tests
 
-const RouteOrdered = Route.extend(routerOrdered);
+const RouteOrdered = Route.extend(pluginOrdered);
 
 let app, parent, child1, child2;
 beforeEach(() => {
