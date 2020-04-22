@@ -8,7 +8,7 @@
 // Modules
 const Overlook = require('@overlook/core'),
 	{Route} = Overlook,
-	pluginOrdered = require('../index'),
+	pluginOrdered = require('../index.js'),
 	{IS_BEFORE} = pluginOrdered;
 
 // Tests
