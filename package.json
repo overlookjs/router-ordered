@@ -16,7 +16,10 @@
   "bugs": {
     "url": "https://github.com/overlookjs/plugin-ordered/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@overlook/plugin": "^0.2.2",
+    "@overlook/route": "^0.4.0"
+  },
   "devDependencies": {
     "@overlook/core": "^0.9.0",
     "@overlookmotel/eslint-config": "^7.1.2",
