@@ -3,6 +3,9 @@
   "version": "0.3.1",
   "description": "Overlook framework ordered plugin",
   "main": "index.js",
+  "files": [
+    "lib/**/*.js"
+  ],
   "author": {
     "name": "Overlook Motel"
   },
