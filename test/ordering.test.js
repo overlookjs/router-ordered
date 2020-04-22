@@ -18,9 +18,9 @@ const RouteOrdered = Route.extend(pluginOrdered);
 let app, parent, child1, child2;
 beforeEach(() => {
 	app = new Overlook();
-	parent = new Route();
-	child1 = new RouteOrdered();
-	child2 = new RouteOrdered();
+	parent = new Route({name: 'root'});
+	child1 = new RouteOrdered({name: 'child1'});
+	child2 = new RouteOrdered({name: 'child2'});
 	parent.attachChild(child1);
 	parent.attachChild(child2);
 	app.attachRouter(parent);
@@ -192,12 +192,12 @@ describe('Ordering', () => { // eslint-disable-line jest/lowercase-name
 
 			expect(() => {
 				app.init();
-			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /?)');
+			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /child2)');
 		});
 
 		it('circular conflict', () => {
-			const child3 = new RouteOrdered();
-			const child4 = new RouteOrdered();
+			const child3 = new RouteOrdered({name: 'child3'});
+			const child4 = new RouteOrdered({name: 'child4'});
 			parent.attachChild(child3);
 			parent.attachChild(child4);
 
@@ -208,7 +208,7 @@ describe('Ordering', () => { // eslint-disable-line jest/lowercase-name
 
 			expect(() => {
 				app.init();
-			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /?)');
+			}).toThrowWithMessage(Error, 'Route ordering conflict (router path /child4)');
 		});
 	});
 });
