@@ -1,4 +1,11 @@
+/* --------------------
+ * @overlook/plugin-ordered module
+ * Jest config
+ * ------------------*/
+
 'use strict';
+
+// Exports
 
 module.exports = {
 	testEnvironment: 'node',
