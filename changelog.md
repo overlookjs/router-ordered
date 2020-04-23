@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.1
+
+Changes:
+
+* Rename class returned from plugin
+
+Dependencies:
+
+* Update `@overlook/plugin` dependency
+* Update `@overlook/route` dependency
+
 ## 0.4.0
 
 Breaking changes:
