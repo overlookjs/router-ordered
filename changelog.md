@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.4.2
+
+Dependencies:
+
+* Update `@overlook/route` dependency
+
+Dev:
+
+* Update dev dependencies
+
+Tests:
+
+* Remove dependency on `@overlook/core`
+
 ## 0.4.1
 
 Changes:
