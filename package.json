@@ -27,10 +27,10 @@
     "url": "https://github.com/overlookjs/plugin-ordered/issues"
   },
   "dependencies": {
-    "@overlook/plugin": "^0.2.6",
-    "@overlook/route": "^0.6.2"
+    "@overlook/plugin": "^0.2.6"
   },
   "devDependencies": {
+    "@overlook/route": "^0.6.2",
     "@overlookmotel/eslint-config": "^7.1.2",
     "@overlookmotel/eslint-config-jest": "^4.0.1",
     "@overlookmotel/eslint-config-node": "^2.0.0",

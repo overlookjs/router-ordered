@@ -13,10 +13,7 @@
 module.exports = function itExports(orderedPlugin) {
 	describe('symbols', () => {
 		it.each([
-			'IS_BEFORE',
-			'ORDER',
-			'SIBLINGS_BEFORE',
-			'SIBLINGS_AFTER'
+			'IS_BEFORE'
 		])('%s', (key) => {
 			expect(typeof orderedPlugin[key]).toBe('symbol');
 		});

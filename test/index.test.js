@@ -6,29 +6,30 @@
 'use strict';
 
 // Modules
-const Route = require('@overlook/route'),
-	pluginOrdered = require('@overlook/plugin-ordered');
+const Plugin = require('@overlook/plugin'),
+	Route = require('@overlook/route'),
+	orderedPlugin = require('@overlook/plugin-ordered'),
+	{IS_BEFORE} = orderedPlugin;
 
 // Tests
 
-describe('Extension', () => { // eslint-disable-line jest/lowercase-name
-	it('is an object', () => {
-		expect(pluginOrdered).toBeObject();
+const OrderedRoute = Route.extend(orderedPlugin);
+
+describe('Plugin', () => { // eslint-disable-line jest/lowercase-name
+	it('is an instance of Plugin class', () => {
+		expect(orderedPlugin).toBeInstanceOf(Plugin);
 	});
 
 	it('when passed to `Route.extend()`, returns subclass of Route', () => {
-		const RouteOrdered = Route.extend(pluginOrdered);
-		expect(RouteOrdered).toBeFunction();
-		expect(Object.getPrototypeOf(RouteOrdered)).toBe(Route);
-		expect(Object.getPrototypeOf(RouteOrdered.prototype)).toBe(Route.prototype);
+		expect(OrderedRoute).toBeFunction();
+		expect(Object.getPrototypeOf(OrderedRoute)).toBe(Route);
+		expect(Object.getPrototypeOf(OrderedRoute.prototype)).toBe(Route.prototype);
 	});
+});
 
-	describe('exports symbols', () => {
-		it.each([['IS_BEFORE'], ['ORDER'], ['SIBLINGS_BEFORE'], ['SIBLINGS_AFTER']])(
-			'%s',
-			(key) => {
-				expect(typeof pluginOrdered[key]).toBe('symbol');
-			}
-		);
+describe('[IS_BEFORE]', () => {
+	it('returns undefined', () => {
+		const route = new OrderedRoute();
+		expect(route[IS_BEFORE]()).toBeUndefined();
 	});
 });

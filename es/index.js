@@ -10,8 +10,5 @@ import orderedPlugin from '../lib/index.js';
 
 export default orderedPlugin;
 export const {
-	IS_BEFORE,
-	ORDER,
-	SIBLINGS_BEFORE,
-	SIBLINGS_AFTER
+	IS_BEFORE
 } = orderedPlugin;
