@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.5.0
+
+Breaking changes:
+
+* Move ordering into `@overlook/plugin-order`
+
+Features:
+
+* ESM export
+
+Dependencies:
+
+* Update `@overlook/route` + `@overlook/plugin` dependencies
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.4.2
 
 Dependencies:
