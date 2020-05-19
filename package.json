@@ -27,7 +27,7 @@
     "url": "https://github.com/overlookjs/plugin-ordered/issues"
   },
   "dependencies": {
-    "@overlook/plugin": "^0.2.6"
+    "@overlook/plugin": "^0.3.0"
   },
   "devDependencies": {
     "@overlook/route": "^0.6.2",
