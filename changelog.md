@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.1
+
+Refactor:
+
+* Shorten code
+
 ## 0.5.0
 
 Breaking changes:
