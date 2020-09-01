@@ -1,6 +1,6 @@
 {
   "name": "@overlook/plugin-ordered",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "Overlook framework ordered plugin",
   "main": "index.js",
   "module": "es/index.js",

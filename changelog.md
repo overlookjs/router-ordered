@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.5.3
+
+Minor:
+
+* Drop support for Node v13
+
+Dependencies:
+
+* Update `@overlook/plugin` dependency
+
+Tests:
+
+* Use `jest-expect-subclass` for subclass checking [refactor]
+
+Dev:
+
+* Update dev dependencies
+
 ## 0.5.1
 
 Refactor:
