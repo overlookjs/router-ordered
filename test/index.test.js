@@ -15,7 +15,7 @@ const Plugin = require('@overlook/plugin'),
 
 const OrderedRoute = Route.extend(orderedPlugin);
 
-describe('Plugin', () => { // eslint-disable-line jest/lowercase-name
+describe('Plugin', () => {
 	it('is an instance of Plugin class', () => {
 		expect(orderedPlugin).toBeInstanceOf(Plugin);
 	});
